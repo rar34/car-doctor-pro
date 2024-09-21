@@ -7,10 +7,15 @@ const Banner = () => {
                 {
                     banners.map((banner, idx) => (
                         <div style={{
-                            backgroundImage: `linear-gradient(45deg,rgba(7,25,42,0.7), rgba(0,0,0,0.3)), url(/assets/images/banner/${idx+1}.jpg)`
-                        }} key={idx} id={`slide${idx+1}`} className="carousel-item relative h-screen w-full">
-                            <div>
-                                <h1>{banner.title}</h1>
+                            backgroundImage: `linear-gradient(45deg,rgba(7,25,42,0.7), rgba(0,0,0,0.3)), url(/assets/images/banner/${idx + 1}.jpg)`
+                        }} key={idx} id={`slide${idx + 1}`} className="carousel-item relative h-[90vh] bg-top bg-no-repeat rounded-xl w-full">
+                            <div className='text-white flex items-center pl-12 md:pl-36'>
+                                <div className='space-y-4'>
+                                    <h1 className='text-2xl md:text-5xl font-bold'>{banner.title}</h1>
+                                    <p className='text-lg'>{banner.description}</p>
+                                    <button className='btn btn-primary mr-4'>Discover More</button>
+                                    <button className='btn btn-outline'>Latest Project</button>
+                                </div>
                             </div>
                             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                                 <a href={banner.prev} className="btn btn-circle">❮</a>
