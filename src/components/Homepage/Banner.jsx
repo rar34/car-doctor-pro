@@ -17,8 +17,8 @@ const Banner = () => {
                                     <button className='btn btn-outline'>Latest Project</button>
                                 </div>
                             </div>
-                            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                                <a href={banner.prev} className="btn btn-circle">❮</a>
+                            <div className="absolute flex font-bold transform text-white bottom-12 right-12">
+                                <a href={banner.prev} className="btn btn-circle mr-6">❮</a>
                                 <a href={banner.next} className="btn btn-circle">❯</a>
                             </div>
                         </div>
