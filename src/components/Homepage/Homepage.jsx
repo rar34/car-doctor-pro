@@ -1,10 +1,12 @@
 import React from 'react';
 import Banner from './Banner';
+import About from './About';
 
 const Homepage = () => {
     return (
-        <div className='h-screen container mx-auto my-10'>
+        <div className='container mx-auto my-10'>
             <Banner />
+            <About />
         </div>
     );
 };
