@@ -6,9 +6,9 @@ const ServiceCard = ({ service }) => {
     // console.log(service)
     const { img, title, price } = service || {};
     return (
-        <div className="card card-compact bg-base-100 border p-10">
+        <div className="card card-compact bg-base-100 border p-6">
             <figure>
-                <Image src={img} height={220} width={400} alt={title} />
+                <Image className='rounded-lg' src={img} height={300} width={400} alt={title} />
             </figure>
             <div className="card-body">
                 <h2 className="text-2xl font-bold">{title}</h2>
