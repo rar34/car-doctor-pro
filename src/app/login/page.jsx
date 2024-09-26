@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 const page = () => {
     return (
         <div className='container mx-auto my-14'>
-            <div className='flex items-center justify-center gap-6'>
+            <div className='flex items-center justify-center gap-20'>
                 <div>
                     <Image src={'/assets/images/login/login.svg'} height={500} width={500} alt='login image' />
                 </div>
@@ -28,6 +29,7 @@ const page = () => {
                         <FaLinkedinIn className='border-2 text-2xl rounded-full'/>
                         <FaGoogle className='border-2 text-2xl rounded-full'/>
                     </div>
+                    <p className='mt-6'>No account ? Please <Link className='font-semibold text-primary' href={"/signup"}>Sign Up</Link></p>
                 </div>
             </div>
         </div>
