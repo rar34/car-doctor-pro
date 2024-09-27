@@ -27,13 +27,14 @@ const page = () => {
                         </div>
                         <button className='btn btn-primary w-full mt-4'>Sign In</button>
                     </form>
-                    <h4 className='text-lg font-medium text-center my-4'>Already have an account ? <span className='font-semibold text-primary'><Link href={"/login"}>Login</Link></span></h4>
+                    
                     <p className='font-bold my-4 text-center'>Or Login with </p>
                     <div className='flex gap-6 items-center justify-center'>
                         <FaFacebookF className='border-2 text-2xl rounded-full'/>
                         <FaLinkedinIn className='border-2 text-2xl rounded-full'/>
                         <FaGoogle className='border-2 text-2xl rounded-full'/>
                     </div>
+                    <h4 className='text-lg font-medium text-center my-4'>Already have an account ? <span className='font-semibold text-primary'><Link href={"/login"}>Login</Link></span></h4>
                 </div>
             </div>
         </div>
