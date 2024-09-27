@@ -13,6 +13,10 @@ const page = () => {
                     <h2 className='text-4xl font-semibold mb-12 text-center'>Sign Up</h2>
                     <form>
                         <div>
+                            <label className='text-lg font-semibold' htmlFor="name">Name</label> <br />
+                            <input type="text" placeholder="Enter Your Name" className="input input-bordered my-2 w-full" />
+                        </div>
+                        <div>
                             <label className='text-lg font-semibold' htmlFor="email">Email</label> <br />
                             <input type="text" placeholder="Enter Your email" className="input input-bordered mt-2 w-full" />
                         </div>
