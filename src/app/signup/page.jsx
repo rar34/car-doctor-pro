@@ -1,9 +1,13 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 const page = () => {
+    const handleSignUp = () =>{
+
+    }
     return (
         <div className='container mx-auto my-14'>
             <div className='flex items-center justify-center gap-20'>
@@ -12,7 +16,7 @@ const page = () => {
                 </div>
                 <div className=' p-20 border rounded-lg'>
                     <h2 className='text-4xl font-semibold mb-12 text-center'>Sign Up</h2>
-                    <form>
+                    <form onSubmit={handleSignUp}>
                         <div>
                             <label className='text-lg font-semibold' htmlFor="name">Name</label> <br />
                             <input type="text" placeholder="Enter Your Name" className="input input-bordered my-2 w-full" />
