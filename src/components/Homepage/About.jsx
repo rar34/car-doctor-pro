@@ -7,8 +7,8 @@ const About = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
                 <div>
                     <div className='relative'>
-                        <Image className='' src={`/assets/images/about_us/person.jpg`} height={500} width={460} alt='person' />
-                        <Image className='absolute -bottom-20 right-40 border-8 border-white' src={`/assets/images/about_us/parts.jpg`} height={350} width={330} alt='person' />
+                        <Image className='' src={`/assets/images/about_us/person.jpg`} height={600} width={600} alt='person' />
+                        <Image className='relative lg:absolute -bottom-20 right-10 border-8 border-white' src={`/assets/images/about_us/parts.jpg`} height={350} width={330} alt='person' />
                     </div>
 
                 </div>

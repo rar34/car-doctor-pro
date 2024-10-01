@@ -25,9 +25,9 @@ const page = () => {
                     </form>
                     <h4 className='text-lg font-medium text-center my-4'>Or Sign in with</h4>
                     <div className='flex gap-6 items-center justify-center'>
-                        <FaFacebookF className='border-2 text-2xl rounded-full'/>
-                        <FaLinkedinIn className='border-2 text-2xl rounded-full'/>
-                        <FaGoogle className='border-2 text-2xl rounded-full'/>
+                        <button className='border-2 text-2xl p-2 rounded-full text-sky-700'><FaFacebookF /></button>
+                        <button className='border-2 text-2xl p-2 rounded-full text-sky-700'><FaLinkedinIn /></button>
+                        <button className='border-2 text-2xl p-2 rounded-full text-sky-700'><FaGoogle /></button>
                     </div>
                     <p className='mt-6'>No account ? Please <Link className='font-semibold text-primary' href={"/signup"}>Sign Up</Link></p>
                 </div>
