@@ -5,7 +5,17 @@ import React from 'react';
 import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 const page = () => {
-    const handleSignUp = () =>{
+    const handleSignUp = (e) =>{
+        e.preventDefault();
+
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        
+        const newUser = {
+            name, email, password
+        }
+        console.log(newUser)
 
     }
     return (
@@ -19,15 +29,15 @@ const page = () => {
                     <form onSubmit={handleSignUp}>
                         <div>
                             <label className='text-lg font-semibold' htmlFor="name">Name</label> <br />
-                            <input type="text" placeholder="Enter Your Name" className="input input-bordered my-2 w-full" />
+                            <input name='name' type="text" placeholder="Enter Your Name" className="input input-bordered my-2 w-full" />
                         </div>
                         <div>
                             <label className='text-lg font-semibold' htmlFor="email">Email</label> <br />
-                            <input type="text" placeholder="Enter Your email" className="input input-bordered mt-2 w-full" />
+                            <input name='email' type="text" placeholder="Enter Your email" className="input input-bordered mt-2 w-full" />
                         </div>
                         <div className='mt-6'>
                             <label className='text-lg font-semibold' htmlFor="password">Password</label> <br />
-                            <input type="text" placeholder="Enter Your password" className="input input-bordered mt-2 w-full" />
+                            <input name='password' type="password" placeholder="Enter Your password" className="input input-bordered mt-2 w-full" />
                         </div>
                         <button className='btn btn-primary w-full mt-4'>Sign In</button>
                     </form>
