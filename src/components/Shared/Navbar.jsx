@@ -76,6 +76,7 @@ const Navbar = () => {
                         <IoMdCart className='text-xl'/>
                         <IoMdSearch className='text-xl'/>
                         <a className="btn btn-outline btn-primary px-8">Appointment</a>
+                        <Link href={"/login"}><button className='btn btn-primary'>Login</button></Link>
                     </div>
                 </div>
             </div>
