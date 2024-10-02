@@ -1,3 +1,5 @@
+import { MongoClient, ServerApiVersion } from "mongodb";
+
 let db;
 export const connectDb = async () => {
     if (db) return db;
