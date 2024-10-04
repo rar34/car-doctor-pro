@@ -5,7 +5,7 @@ import React from 'react';
 import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 const page = () => {
-    const handleSignUp = (e) =>{
+    const handleSignUp = async (e) =>{
         e.preventDefault();
 
         const name = e.target.name.value;
@@ -15,7 +15,16 @@ const page = () => {
         const newUser = {
             name, email, password
         }
-        console.log(newUser)
+        const resp = await fetch("http://localhost:3000/signup/api",{
+            method: "POST",
+            body: JSON.stringify(newUser),
+            headers: {
+                "content-type" : "application/json"
+            }
+        })
+       if(resp.status === 200){
+        e.target.reset();
+       }
 
     }
     return (
