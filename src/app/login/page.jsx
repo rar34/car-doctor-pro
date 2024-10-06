@@ -4,8 +4,10 @@ import Link from 'next/link';
 import React from 'react';
 import { signIn } from 'next-auth/react'
 import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
 
-const page = () => {
+const Page = () => {
+    const router = useRouter();
 
     const handleLogin = async(e) => {
         e.preventDefault();
@@ -17,7 +19,9 @@ const page = () => {
             password,
             redirect: false
         })
-        console.log(resp)
+        if(resp.status === 200){
+            router.push("/");
+        }
 
     }
     return (
@@ -52,4 +56,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
