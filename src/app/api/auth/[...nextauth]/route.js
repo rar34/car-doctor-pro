@@ -12,8 +12,11 @@ const handler = NextAuth({
                 email: {},
                 password: {},
             },
-            async authorize(credentials){
-                return true;
+            async authorize(credentials) {
+                const { email, password } = credentials;
+                if(!email || !password){
+                    return null;
+                }
             }
         })
     ],
