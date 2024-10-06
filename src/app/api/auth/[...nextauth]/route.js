@@ -1,5 +1,7 @@
+import { connectDb } from "@/lib/connectDB";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
+const bcrypt = require('bcrypt');
 
 const handler = NextAuth({
     session: {
@@ -14,9 +16,19 @@ const handler = NextAuth({
             },
             async authorize(credentials) {
                 const { email, password } = credentials;
-                if(!email || !password){
+                if (!email || !password) {
                     return null;
                 }
+                const db = await connectDb();
+                const currentUser = await db.collection('users').findOne({ email });
+                if (!currentUser) {
+                    return null;
+                }
+                const hashedPassword = bcrypt.compareSync(password, currentUser.password);
+                if (!hashedPassword) {
+                    return null;
+                }
+                return currentUser;
             }
         })
     ],

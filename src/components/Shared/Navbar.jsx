@@ -1,4 +1,5 @@
 "use client"
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -32,6 +33,9 @@ const Navbar = () => {
         },
 
     ]
+
+    const session = useSession();
+    // console.log(session)
 
     return (
         <div className="bg-slate-200">
@@ -76,7 +80,10 @@ const Navbar = () => {
                         <IoMdCart className='text-xl'/>
                         <IoMdSearch className='text-xl'/>
                         <a className="btn btn-outline btn-primary px-8">Appointment</a>
-                        <Link href={"/login"}><button className='btn btn-primary'>Login</button></Link>
+                        { !session.data ?
+                            <Link href={"/login"}><button className='btn btn-primary'>Login</button></Link> :
+                            <button onClick ={()=> signOut()} className='btn btn-primary'>Logout</button>
+                        }
                     </div>
                 </div>
             </div>

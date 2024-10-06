@@ -7,12 +7,12 @@ import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
 
 const page = () => {
 
-    const handleLogin = (e) => {
+    const handleLogin = async(e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const resp = signIn('credentials', {
+        const resp =await signIn('credentials', {
             email,
             password,
             redirect: false
@@ -35,7 +35,7 @@ const page = () => {
                         </div>
                         <div className='mt-6'>
                             <label className='text-lg font-semibold' htmlFor="password">Password</label> <br />
-                            <input name='password' type="text" placeholder="Enter Your password" className="input input-bordered mt-2 w-full" />
+                            <input name='password' type="password" placeholder="Enter Your password" className="input input-bordered mt-2 w-full" />
                         </div>
                         <button className='btn btn-primary w-full mt-4'>Sign In</button>
                     </form>
